@@ -1,10 +1,8 @@
 # Table of contents
 
-* [Overview](README.md)
-
 ## Overview
 
-* [👋 Introduction](overview/introduction.md)
+* [👋 Introduction](README.md)
 * [⬇ Installation](overview/installation.md)
 
 ## Quickstart
