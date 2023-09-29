@@ -12,6 +12,8 @@ In order to get a guide on this framework installation, see...
 
 ***
 
+### "Hello World" Comparison
+
 {% tabs %}
 {% tab title="FastVolt" %}
 ```php
@@ -19,7 +21,6 @@ In order to get a guide on this framework installation, see...
 
 use FastVolt\Router\Route;
 
-// Static Page Routes
 Route::get('/', function() {
    return out('Hello, World');
 });
