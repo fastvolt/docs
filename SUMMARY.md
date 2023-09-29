@@ -13,5 +13,6 @@
 
 ## Quickstart
 
+* [🎌 Routing](quickstart/routing.md)
 * [⤴ Request](quickstart/request.md)
 * [⤵ Response](quickstart/response.md)
