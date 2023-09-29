@@ -14,7 +14,17 @@ In order to get a guide on this framework installation, see...
 
 {% tabs %}
 {% tab title="FastVolt" %}
+```php
+<?php
 
+use FastVolt\Router\Route;
+
+// Static Page Routes
+Route::get('/', function() {
+   return out('Hello, World');
+});
+
+```
 {% endtab %}
 
 {% tab title="Slim Framework" %}
