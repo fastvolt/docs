@@ -10,7 +10,6 @@
 * [🎌 Routing](quickstart/routing/README.md)
   * [Static](quickstart/routing/static.md)
   * [Dynamic](quickstart/routing/dynamic.md)
-* [Page](<quickstart/page (1).md>)
 * [⤴ Request](request.md)
 * [⤵ Response](quickstart/response.md)
 * [⭐ Session](quickstart/session.md)
@@ -20,4 +19,4 @@
 ## 📙 Tutorials
 
 * [Create A Simple Todo App](todoapp.md)
-* [Page 1](tutorials/page-1.md)
+* [Create A Simple Blog](tutorials/create-a-simple-blog.md)
