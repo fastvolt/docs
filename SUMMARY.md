@@ -1,9 +1,7 @@
 # Table of contents
 
 * [Overview](README.md)
-* [Cookies](cookies.md)
 * [request](request.md)
-* [Session](session.md)
 * [Create A Simple Todo App](todoapp.md)
 
 ## Overview
@@ -16,3 +14,6 @@
 * [🎌 Routing](quickstart/routing.md)
 * [⤴ Request](quickstart/request.md)
 * [⤵ Response](quickstart/response.md)
+* [⭐ Session](quickstart/session.md)
+* [🍪 Cookies](quickstart/cookies.md)
+* [Page](quickstart/page.md)
