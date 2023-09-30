@@ -3,7 +3,7 @@
 ## Overview
 
 * [👋 Introduction](README.md)
-* [⬇ Installation](overview/installation.md)
+* [📩 Installation](overview/installation.md)
 
 ## Quickstart
 
