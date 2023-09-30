@@ -10,7 +10,7 @@ In order to get a guide on this framework installation, see...
 
 ***
 
-### "Hello World" Comparison
+## "Hello World" Comparison
 
 {% tabs %}
 {% tab title="FastVolt" %}
@@ -61,7 +61,7 @@ Route::get('/home', function () {
 
 ***
 
-# Features
+# 🌟 Features
 PHP has alot of frameworks you can choose from, but what exactly made FastVolt framework more better than them?
 - [x] Simple Installation
 - [x] Low Learning Curve
