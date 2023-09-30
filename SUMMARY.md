@@ -4,6 +4,7 @@
 
 * [👋 Introduction](README.md)
 * [📩 Installation](overview/installation.md)
+* [🛠 Configurations](overview/configurations.md)
 
 ## Quickstart
 
@@ -19,6 +20,9 @@
 
 ## UTILITIES
 
+* [🕹 Validation](utilities/validation.md)
+* [🔓 CSRF](utilities/csrf.md)
+* [☮ Password Hashing](utilities/hash.md)
 * [🗃 File System](utilities/file-system.md)
 
 ## 📙 Tutorials
