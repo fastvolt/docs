@@ -12,9 +12,14 @@
   * [Dynamic](quickstart/routing/dynamic.md)
 * [⤴ Request](request.md)
 * [⤵ Response](quickstart/response.md)
-* [⭐ Session](quickstart/session.md)
+* [⭐ Session](quickstart/session/README.md)
+  * [🔦 Session Flash](quickstart/session/flash.md)
 * [🍪 Cookies](quickstart/cookies.md)
 * [🎯 Middleware](quickstart/page.md)
+
+## UTILITIES
+
+* [🗃 File System](utilities/file-system.md)
 
 ## 📙 Tutorials
 
