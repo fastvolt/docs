@@ -10,16 +10,12 @@ FastVolt is a simple, fast and scalable MVC (Model View Controller) php web fram
 
 In order to get a guide on this framework installation, see...
 
-{% content-ref url="overview/installation.md" %}
-[installation.md](overview/installation.md)
-{% endcontent-ref %}
 
 ***
 
-### "Hello World" Comparison
+## "Hello World" Comparison
 
-{% tabs %}
-{% tab title="FastVolt" %}
+### FastVolt
 ```php
 <?php
 
@@ -30,9 +26,9 @@ Route::get('/home', function() {
 });
 
 ```
-{% endtab %}
 
-{% tab title="Slim Framework" %}
+### Slim Framework
+
 ```php
 <?php
 use Psr\Http\Message\ResponseInterface as Response;
@@ -50,9 +46,9 @@ $app->get('/home', function (Request $request, Response $response, $args) {
 
 $app->run();
 ```
-{% endtab %}
 
-{% tab title="Laravel" %}
+### Laravel
+
 ```php
 <?php
 
