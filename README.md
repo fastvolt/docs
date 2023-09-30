@@ -2,7 +2,7 @@
 
 FastVolt is a simple, fast and scalable MVC (Model View Controller) php web framework used for building web applications. this framework is best suited for entry-level php developers because of it simplicity. our framework is your ideal companion for creating powerful, modern, and scalable web applications.
 
-***
+
 
 ## "Hello World" Comparison
 
@@ -49,10 +49,8 @@ Route::get('/home', function () {
     return 'Hello World';
 });
 ```
-{% endtab %}
-{% endtabs %}
 
-***
+
 
 ## 🌟 Features
 
