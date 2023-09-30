@@ -62,7 +62,7 @@ Route::get('/home', function () {
 ***
 
 # Features
-PHP has alot of frameworks you choose from, but what exactly made Foster framework more better than them?
+PHP has alot of frameworks you can choose from, but what exactly made FastVolt framework more better than them?
 - [x] Simple Installation
 - [x] Low Learning Curve
 - [x] Built-in Simple Http Router
