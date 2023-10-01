@@ -3,7 +3,7 @@
 ## Initialization
 
 ```php
-use FastVolt\Core\Http\HttpRequest;
+use FastVolt\Core\Http\HttpRequest as Request;
 ```
 or you can use the functional method to initialise the `HttpRequest` object:
 
@@ -12,24 +12,30 @@ request();
 ```
 
 ## Usage
-The request object provides an easy way to access various types of incoming HTTP requests. It allows you to retrieve input data, query parameters, headers, uploaded files, and more. Steps below shows how you can work with request object in FastVolt Framework:
+```php
+# class initialisation method
+$request = new Request();
+$request->phpversion(); // 8.1
 
-First, you need to import the request object `FastVolt\Core\Http\HttpRequest` before you can actually access it's features.
+# functional method
+request()->phpversion(); // 8.1
+```
 
-Then initialize request object:
+The request object provides an easy way to access various types of incoming HTTP requests. It allows you to retrieve input data, query parameters, headers, uploaded files, and more.
 
-The request object comes with some methods that extends its functionalities, below lists show the full list of methods in Foster Framework `Request` object.
+The request object comes with some methods that extends its functionalities, here are the full list of methods available in FastVolt Framework `Request` object.
 
-### GET
 
-The `GET` request method is used for getting/retrieving queries data in a request body using the `get` and `getQuery` method.
+### GET METHOD
+
+The `GET` request method is used for getting/retrieving query data in a request body using the `get` and `getQuery` method.
 
 > However, `hasQuery` method can be used to check if the request data exist or not.
 
 Let's take for example, a full url looks like this:
 
 ```sh
-https://FastVolt.net/blog/?id=1&comment=8
+https://myblog.net/blog/?id=1&comment=8
 ```
 
 To get `id` data, which is `1` , here is a way to get it using the `get` method:
@@ -37,10 +43,12 @@ To get `id` data, which is `1` , here is a way to get it using the `get` method:
 ```php
 // using "get" method
 $request->get('id'); // return 1
+```
 
-// using "getQuery" method
+To get both `id` and `comment` data, `getQuery` allows getting two or more data in **GET** request header:
+
+```php
 $request->getQuery(['id', 'comment']); // return array[1, 8]
-
 ```
 
 Also note that the `getQuery` and `get` method has a second and third parameter, which is the `$fallback` and `$escape_output`, this parameters has a default value of null and true respectively.
@@ -49,10 +57,10 @@ Also note that the `getQuery` and `get` method has a second and third parameter,
 
 > `$escape_output` automatically sanitize the `getQuery` or `get` method output.
 
-The main difference between `get` and `getQuery` is that `get` method can only accept one parameter while `getQuery` method can take multiple parameters.\
+The main difference between `get` and `getQuery` is that `get` method can only accept one parameter while `getQuery` method can take multiple parameters.
 
 
-### POST
+### POST METHOD
 
 The `POST` request method is used for retrieving post request data in a request body using the `post` and `postItems` method.
 
@@ -66,17 +74,20 @@ Consider this web form in html:
 
 ```html
 <form action="POST">
+{csrf_token}
 <input type="text" name="user_name" placeholder="Input Full Name"/>
 <input type="submit">
 </form>
 ```
 
-Imagine we submitted the form data using the full name "Oladoyinbo Vincent", we can retrieve and use the form data in Foster Framework using this method:
+Imagine we submitted the form data with "Oladoyinbo Vincent" as the Full Name, we can retrieve and use the sent form data using this method:
 
 ```php
-// using "post" method
-$request->post('user_name'); // return "Oladoyinbo Vincent"
+# using "post" method
+request()->post('user_name'); // return "Oladoyinbo Vincent"
 
+# using "postItems" method
+request()->postItems(['user_name']); // return array(0 => 'Oladoyinbo Vincent')
 ```
 
 > `postItems` method can also be used, if there are multiple input fields to get from the form.
