@@ -52,10 +52,21 @@ Don't enable `debug mode` in production for security reasons.
 
 ### Retrieve Environment Variables
 
-All environment variables in the `.env` file is  all loaded into the `$_ENV` PHP super-global variable.
+All environment variables in the `.env` file is all loaded into the `$_ENV` PHP super-global variable.
 
-This environment variable can be accessed using below format:
+This environment variables can be accessed using the below format:
 
 ```php
 env('app_name');
 ```
+
+Or you can set a default value to ensure the env() function from returning `null`, this value will be returned if the environment variable doesn't exist:
+
+```php
+env('app_name', 'FastVolt');
+```
+
+{% hint style="info" %}
+the env() function is case-insensitive in getting environment variables.
+{% endhint %}
+
