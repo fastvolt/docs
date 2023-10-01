@@ -5,13 +5,13 @@
 ```php
 use FastVolt\Core\Http\HttpRequest as Request;
 ```
-or you can use the functional method to initialise the `HttpRequest` object:
+or you can use the functional method to initialise the `HttpRequest` class:
 
 ```php
 request();
 ```
 
-## Usage
+## Quick Usage
 ```php
 # class initialisation method
 $request = new Request();
@@ -21,12 +21,12 @@ $request->phpversion(); // 8.1
 request()->phpversion(); // 8.1
 ```
 
-The request object provides an easy way to access various types of incoming HTTP requests. It allows you to retrieve input data, query parameters, headers, uploaded files, and more.
+The request class object provides an easy way to access various types of incoming HTTP requests. It allows you to retrieve input data, query parameters, headers, uploaded files, and more.
 
 The request object comes with some methods that extends its functionalities, here are the full list of methods available in FastVolt Framework `Request` object.
 
 
-### GET METHOD
+### 📦 GET METHOD
 
 The `GET` request method is used for getting/retrieving query data in a request body using the `get` and `getQuery` method.
 
@@ -60,7 +60,8 @@ Also note that the `getQuery` and `get` method has a second and third parameter,
 The main difference between `get` and `getQuery` is that `get` method can only accept one parameter while `getQuery` method can take multiple parameters.
 
 
-### POST METHOD
+
+### 📦 POST METHOD
 
 The `POST` request method is used for retrieving post request data in a request body using the `post` and `postItems` method.
 
@@ -94,28 +95,34 @@ request()->postItems(['user_name']); // return array(0 => 'Oladoyinbo Vincent')
 
 
 
-### FILES
 
-The `Files` request method is used for retrieving partially uploaded files in a request body using the `file` and `getFiles` method.
+### 📦 FILES
+
+The `Files` request method is used for retrieving partially uploaded files in a request body by using the `file` and `getFiles` method.
 
 > `hasFile` method can be used to check if the request data exist or not.
 
-Here is a simple example of how `file` and `getFiles` can be used to retrieve temporary file in request body.
+Here is a simple example of how `file` and `getFiles` can be used to retrieve temporary uploaded files in request body.
 
 ```php
 // get single request file 
-$request->file('file1'); // return single array([...])
+request()->file('file1'); // return single array([...])
 
 // get multiple request files
-$request->getFiles(['file1', 'file2']); // return multiple array([[...], [...]])
+request()->getFiles(['file1', 'file2']); // return multiple array([[...], [...]])
 ```
 
 
 
-### COOKIES
+### 📦 COOKIES
 
-Cookies are commonly used to store information about the user's interaction with a website, such as preferences, session data, and tracking information. They allow websites to remember users between different requests and sessions. below information explains how cookies work in Foster Framework:
+Cookies are commonly used to store information about the user's interaction with a website, such as preferences, session data, and tracking information. They allow websites to remember users between different requests and sessions. below information explains how cookies work in FastVolt Framework:
 
+```php
+request()->setCookie('user_name', 'vincent'); // true
+
+request()->getCookie('user_name'); // vincent
+```
 
 
 **Setting and Modifying a Cookie:**
@@ -125,7 +132,7 @@ You can set a cookie in PHP using the `setCookie` method. This method takes only
 > Use `isCookie` or `hasCookie` method to check if Cookie exist before retrieval
 
 ```php
-$request->setCookie('username', 'vincent'); // return bool
+$request->setCookie('user_name', 'vincent'); // return bool
 ```
 
 * `name`: your preferred cookie name
@@ -140,7 +147,7 @@ $request->setCookie('username', 'vincent'); // return bool
 Once a cookie is set, it can be accessed in subsequent requests using the `getCookie` method.
 
 ```php
-$request->getCookie('username'); // return "vincent"
+$request->getCookie('user_name'); // return "vincent"
 ```
 
 
@@ -164,6 +171,7 @@ In some case during development, there might be the need of getting all request 
 ```php
 $request->fetch_all_request_data(); // returns array([...])
 ```
+
 
 ## Functions
 
