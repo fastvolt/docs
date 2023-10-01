@@ -1,25 +1,26 @@
 # ⤴ Request
 
-## Request
-
-The request object provides an easy way to access various types of incoming HTTP requests. It allows you to retrieve input data, query parameters, headers, uploaded files, and more. Steps below shows how you can work with request object in Foster Framework:
-
-First, you need to import the request object `FastVolt\Core\Http\HttpRequest` before you can actually access it's features.
+## Initialization
 
 ```php
 use FastVolt\Core\Http\HttpRequest as Request;
 ```
 
-Then initialize request object:
+### Declaration
 
 ```php
 $request = new Request();
 ```
 
-The request object comes with some methods that extends its functionalities, below lists show the full list of methods in Foster Framework `Request` object.\
-\\
+The request object provides an easy way to access various types of incoming HTTP requests. It allows you to retrieve input data, query parameters, headers, uploaded files, and more. Steps below shows how you can work with request object in Foster Framework:
 
-### `GET`
+First, you need to import the request object `FastVolt\Core\Http\HttpRequest` before you can actually access it's features.
+
+Then initialize request object:
+
+The request object comes with some methods that extends its functionalities, below lists show the full list of methods in Foster Framework `Request` object.
+
+### GET
 
 The `GET` request method is used for getting/retrieving queries data in a request body using the `get` and `getQuery` method.
 
@@ -27,7 +28,7 @@ The `GET` request method is used for getting/retrieving queries data in a reques
 
 Let's take for example, a full url looks like this:
 
-```php
+```sh
 https://FastVolt.net/blog/?id=1&comment=8
 ```
 
@@ -49,9 +50,9 @@ Also note that the `getQuery` and `get` method has a second and third parameter,
 > `$escape_output` automatically sanitize the `getQuery` or `get` method output.
 
 The main difference between `get` and `getQuery` is that `get` method can only accept one parameter while `getQuery` method can take multiple parameters.\
-\\
 
-### `POST`
+
+### POST
 
 The `POST` request method is used for retrieving post request data in a request body using the `post` and `postItems` method.
 
@@ -80,10 +81,9 @@ $request->post('user_name'); // return "Oladoyinbo Vincent"
 
 > `postItems` method can also be used, if there are multiple input fields to get from the form.
 
-\
-\\
 
-### `FILES`
+
+### FILES
 
 The `Files` request method is used for retrieving partially uploaded files in a request body using the `file` and `getFiles` method.
 
@@ -99,12 +99,13 @@ $request->file('file1'); // return single array([...])
 $request->getFiles(['file1', 'file2']); // return multiple array([[...], [...]])
 ```
 
-\
-\\
 
-### `Cookie`
+
+### COOKIES
 
 Cookies are commonly used to store information about the user's interaction with a website, such as preferences, session data, and tracking information. They allow websites to remember users between different requests and sessions. below information explains how cookies work in Foster Framework:
+
+
 
 **Setting and Modifying a Cookie:**
 
@@ -121,7 +122,7 @@ $request->setCookie('username', 'vincent'); // return bool
 * `minutes` **(optional**): the cookie exipiry date, default value for this parameter is "1 day".
 * `samesite` **(optional**): cookie level of security, _**Options**_: `None` || `Lax (Default)` || `Strict`.
 
-\\
+
 
 **Retrieving Cookie Values:**
 
@@ -131,7 +132,7 @@ Once a cookie is set, it can be accessed in subsequent requests using the `getCo
 $request->getCookie('username'); // return "vincent"
 ```
 
-\\
+
 
 **Deleting Cookies:**
 
@@ -143,8 +144,7 @@ $request->deleteCookie('username'); return bool
 
 > Cookies are stored on the user's device, and while they are a convenient way to store small amounts of data, they have security considerations. Sensitive information should not be stored in cookies because they can be accessed and modified by users.
 
-\
-\\
+
 
 ### Retrieve All Request Body
 
