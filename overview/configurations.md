@@ -6,16 +6,16 @@ Here is is how the `.env` file looks like:
 
 ```systemd
 APP_NAME=FastVolt
-APP_URL=http://127.0.0.1/lk
+APP_URL=http://127.0.0.1/
 APP_DEBUG=true
-APP_KEY=app_6510235e924e1f421ca5c7e8678fd275256ffb0b4b53f558cd16134
+APP_KEY=
 APP_CHARSET=UTF8
 APP_ENVIRONMENT=development
 
 
 DB_CONNECTION=mysql
 DB_HOST=localhost
-DB_NAME=logistics
+DB_NAME=
 DB_USERNAME=root
 DB_PASSWORD=
 DB_CHARSET=UTF8
@@ -29,3 +29,33 @@ MAIL_AUTH=true
 
 ```
 
+
+
+### App Essentials
+
+In order to config your app name that will be used throughout your applicatiion, kindly change `FastVolt` to your preferred project name:
+
+```systemd
+APP_NAME=FastVolt
+```
+
+If you are in development environment, and you want all errors you encounter to display, you can do this by enabling debug mode, this provides detailed error messages and stack traces, aiding in debugging during development.
+
+```systemd
+APP_DEBUG=true
+APP_ENVIRONMENT=development
+```
+
+{% hint style="warning" %}
+Don't enable `debug mode` in production for security reasons.
+{% endhint %}
+
+### Retrieve Environment Variables
+
+All environment variables in the `.env` file is  all loaded into the `$_ENV` PHP super-global variable.
+
+This environment variable can be accessed using below format:
+
+```php
+env('app_name');
+```
