@@ -60,10 +60,12 @@ This environment variables can be accessed using the below format:
 env('app_name');
 ```
 
-Or you can set a default value to ensure the env() function from returning `null`, this value will be returned if the environment variable doesn't exist:
+Or you can set a default value to ensure the env() function from returning `null`.
+
+let's review the below code snippet, `Vincent Blog` value will be returned if the environment variable `APP_NAME` doesn't have a value or doesn't exist:
 
 ```php
-env('app_name', 'FastVolt');
+env('app_name', 'Vincent Blog');
 ```
 
 {% hint style="info" %}
