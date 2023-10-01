@@ -4,6 +4,7 @@
 
 * [👋 Introduction](README.md)
 * [📩 Installation](overview/installation.md)
+* [📂 Directory Structure](overview/directory-structure.md)
 * [🛠 Configurations](overview/configurations.md)
 
 ## Quickstart
