@@ -1,10 +1,26 @@
 # 🍪 Cookies
 
+## Initialization
+
+```php
+use FastVolt\Helper\Cookie;
+```
+
+### Usage
+
+```php
+Cookie::store('user', 'vincent');
+
+Cookie::get('user'); // vincent
+```
+
+
+
 A Cookie in Foster Framework is a small piece of data that is sent from a web server to a user's web browser and stored on the user's device. Cookies are commonly used to store information about the user's interaction with a website, such as preferences, session data, and tracking information. They allow websites to remember users between different requests and sessions.
 
-## Usage
 
-Cookie can be managed using the cookie standalone helper object, here is quick sample of how it works below.
+
+Cookies can be managed using the cookie standalone helper object, here is quick sample of how it works below.
 
 **Import The `Cookie` Helper Package**:\\
 
@@ -33,7 +49,7 @@ Cookie::get('username'); // return 'foster'
 Cookie::delete('username'); // return true
 ```
 
-\\
+
 
 ## Cookie Methods
 
@@ -51,7 +67,7 @@ The `store` method takes only three parameters
 * `message`: string|array
 * `expires`: int (_**optional**_).
 
-\\
+
 
 ### Stable
 
@@ -69,7 +85,7 @@ The `stable` method takes only three parameters
 
 > **NOTE**: `stable` method should not be used to store importance informations for security reasons.
 
-\\
+
 
 ### Retrieve
 
@@ -83,7 +99,7 @@ The `get` method takes only one parameter
 
 * `cookie_name`: string
 
-\\
+
 
 ### Delete
 
@@ -97,7 +113,7 @@ The `delete` method takes only one parameter
 
 * `cookie_name`: string
 
-\\
+
 
 ### Has
 

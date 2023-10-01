@@ -1,5 +1,21 @@
 # ⭐ Session
 
+## Initialization
+
+```php
+use FastVolt\Helper\Session
+```
+
+### Usage
+
+```php
+Session::store('user', 'vincent');
+```
+
+
+
+
+
 In Foster Framework, the PHP session handling mechanism allows you to store and manage user-specific data across multiple requests and sessions. Sessions are a way to maintain stateful information about a user's interactions with a web application. Foster Framework provides a convenient and secure way to work with sessions using its built-in session management features.
 
 Here's how sessions work in Foster Framework:
