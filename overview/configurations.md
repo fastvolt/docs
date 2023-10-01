@@ -70,3 +70,8 @@ env('app_name', 'FastVolt');
 the env() function is case-insensitive in getting environment variables.
 {% endhint %}
 
+
+
+### Getting Application Into Production
+
+Every single time `FastVolt` framework is installed, the `APP_ENVIRONMENT` is always set to `development`, in this case, errors are displayed and devtools section is enabled, the development environment is  &#x20;
