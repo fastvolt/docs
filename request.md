@@ -3,24 +3,16 @@
 ## Initialization
 
 ```php
-use FastVolt\Core\Http\HttpRequest as Request;
+use FastVolt\Core\Http\HttpRequest;
 ```
-
-### Declaration
-
-```php
-$request = new Request();
-```
-
-or you can use the function method:
+or you can use the functional method to initialise the `HttpRequest` object:
 
 ```php
 request();
 ```
 
-
-
-The request object provides an easy way to access various types of incoming HTTP requests. It allows you to retrieve input data, query parameters, headers, uploaded files, and more. Steps below shows how you can work with request object in Foster Framework:
+## Usage
+The request object provides an easy way to access various types of incoming HTTP requests. It allows you to retrieve input data, query parameters, headers, uploaded files, and more. Steps below shows how you can work with request object in FastVolt Framework:
 
 First, you need to import the request object `FastVolt\Core\Http\HttpRequest` before you can actually access it's features.
 
