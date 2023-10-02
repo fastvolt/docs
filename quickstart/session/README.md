@@ -37,7 +37,7 @@ You can store data in a session using the `store` method
 // store single data
 Session::store('key', 'value'); // return bool
 
-// store multiple datas
+// store multiple value datas
 Session::store('key', [
     'key1' => 'value',
     'key2' => 'value2'
@@ -58,10 +58,10 @@ Session::store('user.data', $all_data);
 $details = Session::get('user.data');
 
 // get username data
-$username = $details['username']; // return 'vincent'
+echo $details['username']; // return 'vincent'
 
 // get user role
-$role = $details['role']; // return 'developer'
+echo $details['role']; // return 'developer'
 ```
 The `store` session method accept only two parameters:
 - `key`: *string*
@@ -80,16 +80,48 @@ Session::get('key'); // return 'value'
 **A real implementation example**:
 
 ```php
-Session::store('username', 'oladoyinbov');
+Route::mixed('/auth', function () {
 
-// retrieve username data
-$username = Session::get('username'); // return 'oladoyinbov'
+   # check if required header method is POST request
+  if(request()->is_post()) {
+
+     # get form datas
+     $form = request()->input();
+
+     # validate form post request datas
+     request()->validate(
+      'username' => 'required|min:2'
+    );
+
+       # return error message if validation process encountered any errors
+      if( request()->validate_errors() ){
+          return request ()->validate_errors();
+       }
+
+      # check if username is stored in session successfully
+      if( Session::store('user.name', $form->username) ){
+         # redirect to dashboard
+         request()->redirect('/dashboard', 301);
+      } 
+  }
+}
 ```
 
+// dashboard
 ```php
-// modify session data
-Session::store('username', 'foster'); // return true
+Route::get('/dashboard', function () {
+
+   # request session data
+   $username = Session::get('username');
+
+   # display retrieved session data
+   if( $username ) {
+      echo $username;
+    }
+   
+}
 ```
+
 The `get` session method only accept two parameters:
 
 - `session_key`: *string*.
