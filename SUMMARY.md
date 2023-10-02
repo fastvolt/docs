@@ -4,6 +4,7 @@
 
 * [👋 Introduction](README.md)
 * [📩 Installation](overview/installation.md)
+* [🐦 Dependencies](overview/dependencies.md)
 * [📂 Directory Structure](overview/directory-structure.md)
 * [🛠 Configurations](overview/configurations.md)
 
