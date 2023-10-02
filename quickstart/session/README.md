@@ -3,7 +3,7 @@
 ## Initialization
 
 ```php
-use FastVolt\Helper\Session
+use FastVolt\Helper\Session;
 ```
 
 ### Quick Usage
@@ -19,7 +19,7 @@ Session::get('user'); // vincent
 Session::unset('user'); // true
 
 # delete all session
-Session::destroy(); // true
+Session::destroy(); // void
 ```
 
 
@@ -63,8 +63,11 @@ $username = $details['username']; // return 'vincent'
 // get user role
 $role = $details['role']; // return 'developer'
 ```
+The `store` session method accept only two parameters:
+- `key`: *string*
+- `value`: *mixed*.
 
-
+<br>
 
 ## Retrieving Data from a Session:
 
@@ -87,9 +90,11 @@ $username = Session::get('username'); // return 'oladoyinbov'
 // modify session data
 Session::store('username', 'foster'); // return true
 ```
-> `accepts`: **$key**: *string*
-> `accepts`: **$value**: *mixed*
+The `get` session method only accept two parameters:
 
+- `session_key`: *string*.
+
+<br>
 
 
 ## Removing Data from a Session:
@@ -99,6 +104,7 @@ You can remove data from a session using the `unset` method.
 ```php
 Session::unset('username'); // return true
 ```
+
 
 **A real implementation example**:
 
@@ -112,12 +118,16 @@ Session::get('username'); // return 'foster'
 // delete session data
 Session::unset('username'); // return true
 ```
+The `unset` session request method only accept one parameter:
+- `session_key`: *string*.
+
+<br>
 
 
 ## Destroying All Session
 In order to destroy all session in an application, here is how to do it using the `destroy' session method:
 
 ```php
-Session::destroy(): null;
+Session::destroy(): void;
 ```
-> `destroy` method returns void
+> `destroy` method accepts no parameter but returns *null* | *void*.
