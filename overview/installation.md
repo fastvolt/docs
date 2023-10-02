@@ -10,10 +10,11 @@ FastVolt is a simple, fast and scalable MVC (Model View Controller) php web fram
 
 ### :robot: Installation With Composer
 
-Run terminal command to change directory to your preferred installation folder:
+Run this terminal command to create new project directory:
 
 ```sh
-cd my-project
+>> mkdir my-project
+>> cd my-project
 ```
 
 Use `composer` to install `FastVolt` framework to the `my-project` folder directory:
@@ -24,8 +25,10 @@ composer require fastvolt/framework
 
 ### 🖥️ Starting a server
 
-```cmd
-php -S localhost:8000 -t FastVolt/
+Run the below command on terminal to start a server on port `8080`:
+
+```bash
+>> php -S localhost:8000 -t my-project/
 ```
 
-> **NOTE**: `FastVolt` should be the directory name or folder name where the framework was installed into.
+> **NOTE**: `my-project` is the directory name or folder name where the framework was installed into.
