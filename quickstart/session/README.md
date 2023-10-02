@@ -76,11 +76,16 @@ To retrieve data from a session, you need to use the `get` session helper method
 ```php
 Session::get('key'); // return 'value'
 ```
+The `get` session method only accept two parameters:
+
+- `session_key`: *string*.
+
+  
 
 **A real implementation example**:
 
 ```php
-Route::mixed('/auth', function () {
+Route::post('/auth', function () {
 
    # check if required header method is POST request
   if(request()->is_post()) {
@@ -91,7 +96,7 @@ Route::mixed('/auth', function () {
      # validate form post request datas
      request()->validate(
       'username' => 'required|min:2'
-    );
+     );
 
        # return error message if validation process encountered any errors
       if( request()->validate_errors() ){
@@ -103,7 +108,7 @@ Route::mixed('/auth', function () {
          # redirect to dashboard
          request()->redirect('/dashboard', 301);
       } 
-  }
+   }
 }
 ```
 
@@ -116,15 +121,11 @@ Route::get('/dashboard', function () {
 
    # display retrieved session data
    if( $username ) {
-      echo $username;
+      echo $username; 
     }
    
 }
 ```
-
-The `get` session method only accept two parameters:
-
-- `session_key`: *string*.
 
 <br>
 
