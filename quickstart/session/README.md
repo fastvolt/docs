@@ -6,29 +6,28 @@
 use FastVolt\Helper\Session
 ```
 
-### Usage
+### Quick Usage
 
 ```php
-Session::store('user', 'vincent');
+# store new session
+Session::store('user', 'vincent'); // true
+
+# retrieve stored session
+Session::get('user'); // vincent
+
+# unset stored session
+Session::unset('user'); // true
+
+# delete all session
+Session::destroy(); // true
 ```
 
 
+In FastVolt Framework, the PHP session handling mechanism allows you to store and manage user-specific data across multiple requests and sessions. 
+
+Sessions are a way to maintain stateful information about a user's interactions with a web application. 
 
 
-
-In Foster Framework, the PHP session handling mechanism allows you to store and manage user-specific data across multiple requests and sessions. Sessions are a way to maintain stateful information about a user's interactions with a web application. Foster Framework provides a convenient and secure way to work with sessions using its built-in session management features.
-
-Here's how sessions work in Foster Framework:
-
-## Starting a Session:
-
-When a user interacts with your Foster Framework application, a session is automatically started when the session helper object `FastVolt\Helper\Session` is imported.
-
-```php
-use FastVolt\Helper\Session;
-```
-
-After importing the Session object, declare and make use of its methods.
 
 ## Storing Data in a Session:
 
@@ -65,6 +64,8 @@ $username = $details['username']; // return 'vincent'
 $role = $details['role']; // return 'developer'
 ```
 
+
+
 ## Retrieving Data from a Session:
 
 To retrieve data from a session, you need to use the `get` session helper method.
@@ -86,6 +87,10 @@ $username = Session::get('username'); // return 'oladoyinbov'
 // modify session data
 Session::store('username', 'foster'); // return true
 ```
+> `accepts`: **$key**: *string*
+> `accepts`: **$value**: *mixed*
+
+
 
 ## Removing Data from a Session:
 
@@ -107,3 +112,12 @@ Session::get('username'); // return 'foster'
 // delete session data
 Session::unset('username'); // return true
 ```
+
+
+## Destroying All Session
+In order to destroy all session in an application, here is how to do it using the `destroy' session method:
+
+```php
+Session::destroy(): null;
+```
+> `destroy` method returns void
