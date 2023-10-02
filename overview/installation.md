@@ -23,6 +23,14 @@ Use `composer` to install `FastVolt` framework to the `my-project` folder direct
 composer require fastvolt/framework
 ```
 
+And for how your application will look like after installation, check:
+
+{% content-ref url="directory-structure.md" %}
+[directory-structure.md](directory-structure.md)
+{% endcontent-ref %}
+
+
+
 ### 🖥️ Starting a server
 
 Run the below command on terminal to start a server on port `8080`:
