@@ -6,54 +6,34 @@
 use FastVolt\Helper\Cookie;
 ```
 
-### Usage
+### Quick Usage
 
 ```php
-Cookie::store('user', 'vincent');
+# init cookie helper class
 
+use FastVolt\Helper\Cookie;
+
+# store cookie
+Cookie::store('user', 'vincent'); // true
+
+# retrieve cookie
 Cookie::get('user'); // vincent
+
+# delete cookie
+Cookie::delete('user'); // true
 ```
 
 
 
-A Cookie in Foster Framework is a small piece of data that is sent from a web server to a user's web browser and stored on the user's device. Cookies are commonly used to store information about the user's interaction with a website, such as preferences, session data, and tracking information. They allow websites to remember users between different requests and sessions.
+A Cookie is a small piece of data that is sent from a web server to a user's web browser and stored on the user's device.
 
-
-
-Cookies can be managed using the cookie standalone helper object, here is quick sample of how it works below.
-
-**Import The `Cookie` Helper Package**:\\
-
-```php
-use FastVolt\Helper\Cookie;
-```
-
-**Then access it amazing features** 🙂
-
-```php
-use FastVolt\Helper\Cookie;
-
-// store cookie
-Cookie::store('username', 'vincent'); // return true
-
-// get stored cookie
-Cookie::get('username'); // return 'vincent'
-
-// update stored cookie
-Cookie::store('username', 'foster');
-
-// get updated cookie
-Cookie::get('username'); // return 'foster'
-
-// delete stored cookie
-Cookie::delete('username'); // return true
-```
+Cookies are commonly used to store information about the user's interaction with a website, such as preferences, session data, and tracking information. They allow websites to remember users between different requests and sessions.
 
 
 
 ## Cookie Methods
 
-### Store
+### 📦 Store
 
 Cookie can be store and updated in this format:
 
@@ -69,7 +49,7 @@ The `store` method takes only three parameters
 
 
 
-### Stable
+### 📦 Stable
 
 Here is another approach similar to `store` method to store cookie that never expires using the `stable` method:
 
@@ -87,7 +67,7 @@ The `stable` method takes only three parameters
 
 
 
-### Retrieve
+### 📦 Retrieve
 
 Stored Cookie can be retrieved using this method:
 
@@ -97,11 +77,11 @@ Cookie::get('username');  // return string|int
 
 The `get` method takes only one parameter
 
-* `cookie_name`: string
+* `cookie_name`: string.
 
 
 
-### Delete
+### 📦 Delete
 
 Delete stored cookie
 
@@ -115,7 +95,7 @@ The `delete` method takes only one parameter
 
 
 
-### Has
+### 📦 Has
 
 This method is been used to check if cookie exist
 
@@ -123,7 +103,7 @@ This method is been used to check if cookie exist
 Cookie::has('username'); // return bool
 ```
 
-**Real Code Usage**:
+**Method Usage**:
 
 ```php
 Route::get('/home', function(){
