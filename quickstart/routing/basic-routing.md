@@ -1,4 +1,4 @@
-# Basic Routing
+# 🌠 Basic Routing
 
 ## :tophat: Basic Request Routing
 
@@ -10,7 +10,7 @@ The listed methods above takes two to three arguments:
 * `handler`: this parameter takes either a closure, template name or controller action that should be executed when the route is accessed.
 * `middleware`: this is the code that runs before the main application loads.
 
-### `Get` Method
+### `GET` Method
 
 This route method is used for getting form data or http post requests, this method takes three arguments.
 
@@ -28,7 +28,7 @@ Or you can shorten the process by using the short closure handler:
 Route::get('/', fn () => out('Hello World'));
 ```
 
-### &#x20;`Post` Method
+### &#x20;`POST` Method
 
 This route method is used for getting form data or http post requests, this method takes three arguments:
 
@@ -45,8 +45,6 @@ Route::post('/add-user', function() {
 });
 ```
 
-
-
 ### &#x20;`PUT` Method
 
 This route method is used for making http put requests, this method takes three arguments:
@@ -62,8 +60,6 @@ Route::post('/edit-user', function() {
   //...
 });
 ```
-
-
 
 ### `DELETE` Method
 
@@ -96,4 +92,50 @@ Route::get('/', 'index');
 ```
 
 > the above code snippet automatically display or map the created template: `index.tpl` on '/' request uri
+
+
+
+### Route Parameters
+
+In Fastvolt, you can define route parameters by enclosing them in curly braces `{id}` or using colon `:id`, These parameters capture values from the URL and pass them to your route handler as variables.
+
+**URL Snippet:**
+
+```batch
+# considering this url
+http:://www.myblog.net/blog/13
+```
+
+**Code Representation:**&#x20;
+
+```php
+Route::get('/blog/{id}', function(int $id) {
+    return out("you are viewing blog id: {$id}");
+});
+```
+
+The above code snippet captures the {id} value from the url snippet, then converts the {id} value to variable, the output of the above code while accessing the url: `http:://www.myblog.net/blog/13` from the browser will be:
+
+```sh
+you are viewing blog id: 13
+```
+
+### Route Groups
+
+Route groups allow you to apply common attributes, such as middleware to a set of routes.
+
+This process is useful when you want to group your routes into sections:
+
+```php
+$route = Route::group('/user');
+
+      # this route uri will be accessed through `/user/dashboard`
+     $route->get('/dashboard', function() {
+         return out('This is the main user dashboard!');
+     });
+     
+     $route->get('/profile', function() {
+         return out('This is the user profile!');
+     });
+```
 

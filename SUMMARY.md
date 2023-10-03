@@ -11,8 +11,8 @@
 ## Quickstart
 
 * [🎌 Routing](quickstart/routing/README.md)
-  * [Basic Routing](quickstart/routing/basic-routing.md)
-  * [Advanced Routing](quickstart/routing/advanced-routing.md)
+  * [🌠 Basic Routing](quickstart/routing/basic-routing.md)
+  * [🌠 Advanced Routing](quickstart/routing/advanced-routing.md)
 * [⤴ Request](request.md)
 * [⤵ Response](quickstart/response.md)
 * [⭐ Session](quickstart/session/README.md)
