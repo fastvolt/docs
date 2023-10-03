@@ -12,6 +12,8 @@ The listed methods above takes two to three arguments:
 
 ### `Get` Method
 
+This route method is used for getting form data or http post requests, this method takes three arguments.
+
 The code snippet below explains how `get` route method can be used with Closure handler:
 
 ```php
@@ -30,7 +32,37 @@ Route::get('/', fn () => out('Hello World'));
 
 This route method is used for getting form data or http post requests, this method takes three arguments:
 
-* [ ] `uri` :  u
+* [ ] `uri` : _string._
+* [ ] `handler`:  **Closure**|_string._
+* [ ] `middleware`: _string_|_array_.
+
+#### :computer: Code Snippet:
+
+```php
+Route::post('/user', function() {
+  $name = request()->post('user.name');
+  return out($name);
+});
+```
+
+
+
+### &#x20;`PUT` Method
+
+This route method is used for getting form data or http post requests, this method takes three arguments:
+
+* [ ] `uri` : _string._
+* [ ] `handler`:  **Closure**|_string._
+* [ ] `middleware`: _string_|_array_.
+
+#### :computer: Code Snippet:
+
+```php
+Route::post('/add-user', function() {
+  $name = request()->post('user.name');
+  return out($name);
+});
+```
 
 
 
