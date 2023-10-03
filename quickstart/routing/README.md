@@ -1,19 +1,43 @@
 # 🎌 Routing
 
-The routing system in FastVolt Framework plays a pivotal role in directing incoming HTTP requests to the appropriate controllers and actions. It allows developers to define routes for various HTTP methods, making it easy to create RESTful APIs, web applications, or any other type of HTTP-based service.
-
-In this documentation, you'll learn how to define, configure, and leverage the routing system in FastVolt Framework to handle incoming requests and build robust web applications.
-
-Before diving into routing, ensure that FastVolt Framework is properly installed and configured in your project. Refer to the installation documentation for detailed instructions.
-
-
-Routing in FastVolt is simple and expressive. You can define routes for various HTTP methods by importing the `Request` Package/Class provided by the framework.
+## Initialization
 
 ```php
-<?php
-
 use FastVolt/Router/Route;
-
 ```
 
-In the next page, we will discuss more on the router implementation in the main development scenario.
+> Note that Routing in FastVolt take place in `routes/main.route.php`
+
+<br>
+In this documentation, you'll learn how to define, configure, and leverage the routing system in FastVolt Framework to handle incoming requests and build robust web applications.
+
+<br>
+
+Before diving into routing, ensure that FastVolt Framework is properly installed and configured in your project, refer to the installation documentation for detailed instructions.
+<br>
+
+## Basic Routing
+To define a basic route, here are the HTTP verb you can use (e.g., GET, POST, PUT, DELETE) method. 
+The listed methods above takes two to three arguments: 
+
+- `uri`: the URI to match with request uri.
+- `handler`: this parameter takes either a closure, template name or controller action that should be executed when the route is accessed.
+- `middleware`: this is the code that runs before the main application loads.
+
+
+### `Get` Method
+
+The code snippet below explains how `get` route method is been used with Closure handler:
+
+```php
+Route::get('/', function () {
+   return out('Hello world'); // return 'Hello world'
+});
+```
+Or you can shorten the process by using the short closure:
+
+```php
+Route::get('/', fn () => out('Hello World'));
+```
+
+
