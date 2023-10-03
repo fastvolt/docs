@@ -1,10 +1,13 @@
 # 🌠 Basic Routing
 
-## :tophat: Basic Request Routing
+In order to define a basic route, here are the HTTP verb you can use with `route` class:
 
-To define a basic route, here are the HTTP verb you can use with `route` class (e.g., GET, POST, PUT, DELETE).
+* GET
+* POST
+* PUT
+* DELETE
 
-The listed methods above takes two to three arguments:
+The listed methods above takes two to three arguments/parameters:
 
 * `uri`: the URI to match with request uri.
 * `handler`: this parameter takes either a closure, template name or controller action that should be executed when the route is accessed.
@@ -25,7 +28,7 @@ Route::get('/', function () {
 Or you can shorten the process by using the short closure handler:
 
 ```php
-Route::get('/', fn () => out('Hello World'));
+Route::get('/', fn() => out('Hello World'));
 ```
 
 ### &#x20;`POST` Method
@@ -120,22 +123,25 @@ The above code snippet captures the {id} value from the url snippet, then conver
 you are viewing blog id: 13
 ```
 
+
+
 ### Route Groups
 
 Route groups allow you to apply common attributes, such as middleware to a set of routes.
 
-This process is useful when you want to group your routes into sections:
+&#x20;process is useful when you want to group your routes into sections:
 
 ```php
 $route = Route::group('/user');
 
-      # this route uri will be accessed through `/user/dashboard`
-     $route->get('/dashboard', function() {
+  # uri: '/user/dashboard'
+  $route->get('/dashboard', function() {
          return out('This is the main user dashboard!');
-     });
-     
-     $route->get('/profile', function() {
+  });
+    
+  # uri: '/user/profile'
+  $route->get('/profile', function() {
          return out('This is the user profile!');
-     });
+    });
 ```
 

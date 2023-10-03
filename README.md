@@ -4,7 +4,7 @@ FastVolt is a simple, fast and scalable MVC (Model View Controller) php web fram
 
 ### "Hello World" Comparison
 
-#### ⚡ FastVolt
+#### ⚡ Fastvolt
 
 ```php
 <?php

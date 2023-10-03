@@ -1,6 +1,6 @@
 # 🛠 Configurations
 
-Fastvolt configuration page is pretty straight forward, the `.env` file in your project main directory  allows you to customize various settings and parameters to tailor your web application according to your project's requirements. Proper configuration ensures that your application runs smoothly and securely.
+Fastvolt configuration page is pretty straight forward, the `.env` file in your project main directory allows you to customize various settings and parameters to tailor your web application according to your project's requirements. Proper configuration ensures that your application runs smoothly and securely.
 
 Here is is how the `.env` file looks like:
 
@@ -28,8 +28,6 @@ MAIL_PORT=3306
 MAIL_AUTH=true
 
 ```
-
-
 
 ### App Essentials
 
@@ -76,4 +74,4 @@ the env() function is case-insensitive in getting environment variables.
 
 ### Getting Application Into Production
 
-Every single time `FastVolt` framework is installed, the `APP_ENVIRONMENT` is always set to `development`, in this case, errors are displayed and devtools section is enabled, the development environment is  &#x20;
+Every single time `Fastvolt` framework is installed, the `APP_ENVIRONMENT` is always set to `development`, in this case, errors are displayed and dev-tools section is enabled, the development environment is can be very dangerous to be enabled in production, so whenever you are moving your application to production, `APP_ENVIRONMENT` must be set to `production`.
