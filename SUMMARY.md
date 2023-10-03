@@ -11,8 +11,8 @@
 ## Quickstart
 
 * [🎌 Routing](quickstart/routing/README.md)
-  * [Static](quickstart/routing/static.md)
-  * [Dynamic](quickstart/routing/dynamic.md)
+  * [Basic Routing](quickstart/routing/basic-routing.md)
+  * [Advanced Routing](quickstart/routing/advanced-routing.md)
 * [⤴ Request](request.md)
 * [⤵ Response](quickstart/response.md)
 * [⭐ Session](quickstart/session/README.md)

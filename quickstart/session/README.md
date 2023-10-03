@@ -22,12 +22,9 @@ Session::unset('user'); // true
 Session::destroy(); // void
 ```
 
+In FastVolt Framework, the PHP session handling mechanism allows you to store and manage user-specific data across multiple requests and sessions.
 
-In FastVolt Framework, the PHP session handling mechanism allows you to store and manage user-specific data across multiple requests and sessions. 
-
-Sessions are a way to maintain stateful information about a user's interactions with a web application. 
-
-
+Sessions are a way to maintain stateful information about a user's interactions with a web application.
 
 ## Storing Data in a Session:
 
@@ -63,11 +60,14 @@ echo $details['username']; // return 'vincent'
 // get user role
 echo $details['role']; // return 'developer'
 ```
-The `store` session method accept only two parameters:
-- `key`: *string*
-- `value`: *mixed*.
 
-<br>
+The `store` session method accept only two parameters:
+
+* `key`: _string_
+* `value`: _mixed_.
+
+\
+
 
 ## Retrieving Data from a Session:
 
@@ -76,11 +76,10 @@ To retrieve data from a session, you need to use the `get` session helper method
 ```php
 Session::get('key'); // return 'value'
 ```
+
 The `get` session method only accept two parameters:
 
-- `session_key`: *string*.
-
-  
+* `session_key`: _string_.
 
 **A real implementation example**:
 
@@ -113,6 +112,7 @@ Route::post('/auth', function () {
 ```
 
 // dashboard
+
 ```php
 Route::get('/dashboard', function () {
 
@@ -127,7 +127,7 @@ Route::get('/dashboard', function () {
 }
 ```
 
-<br>
+\
 
 
 ## Removing Data from a Session:
@@ -137,7 +137,6 @@ You can remove data from a session using the `unset` method.
 ```php
 Session::unset('username'); // return true
 ```
-
 
 **A real implementation example**:
 
@@ -151,16 +150,20 @@ Session::get('username'); // return 'foster'
 // delete session data
 Session::unset('username'); // return true
 ```
-The `unset` session request method only accept one parameter:
-- `session_key`: *string*.
 
-<br>
+The `unset` session request method only accept one parameter:
+
+* `session_key`: _string_.
+
+\
 
 
 ## Destroying All Session
-In order to destroy all session in an application, here is how to do it using the `destroy' session method:
+
+In order to destroy all session in an application, here is how to do it using the \`destroy' session method:
 
 ```php
 Session::destroy(): void;
 ```
-> `destroy` method accepts no parameter but returns *null* | *void*.
+
+> `destroy` method accepts no parameter but returns _null_ | _void_.

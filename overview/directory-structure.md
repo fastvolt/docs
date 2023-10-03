@@ -1,15 +1,15 @@
 # 📂 Directory Structure
 
-Here is FastVolt directory structure after installation:
+Here is how FastVolt directory structure looks like after installation:
 
-```
+```iecst
 ├── config                  # Configuration files (routes.php, site.php)
 ├── public                  # Web server files (index.php)
 ├── resources               # server resources (css, js, images, ...)
 ├── routes                  # request routing files
     ├── api.route.php       # Api routes
 │   ├── main.route.php      # Main application routes
-│   ├── Router              # Devtools routes
+│   ├── dev.route.php              # Devtools routes
 ├── src                     # Application core source code
 ├── storage                 # Server storage
 │   ├── cache               # Cache files
