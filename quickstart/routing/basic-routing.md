@@ -33,13 +33,13 @@ Route::get('/', fn () => out('Hello World'));
 This route method is used for getting form data or http post requests, this method takes three arguments:
 
 * [ ] `uri` : _string._
-* [ ] `handler`:  **Closure**|_string._
+* [ ] `handler`:  **Closure** |object|_string._
 * [ ] `middleware`: _string_|_array_.
 
 #### :computer: Code Snippet:
 
 ```php
-Route::post('/user', function() {
+Route::post('/add-user', function() {
   $name = request()->post('user.name');
   return out($name);
 });
@@ -49,7 +49,7 @@ Route::post('/user', function() {
 
 ### &#x20;`PUT` Method
 
-This route method is used for getting form data or http post requests, this method takes three arguments:
+This route method is used for making http put requests, this method takes three arguments:
 
 * [ ] `uri` : _string._
 * [ ] `handler`:  **Closure**|_string._
@@ -58,9 +58,26 @@ This route method is used for getting form data or http post requests, this meth
 #### :computer: Code Snippet:
 
 ```php
-Route::post('/add-user', function() {
-  $name = request()->post('user.name');
-  return out($name);
+Route::post('/edit-user', function() {
+  //...
+});
+```
+
+
+
+### `DELETE` Method
+
+This route method is used for making http delete requests, this method takes three arguments:
+
+* [ ] `uri` : _string._
+* [ ] `handler`:  **Closure**|_string._
+* [ ] `middleware`: _string_|_array_.
+
+#### :computer: Code Snippet:
+
+```php
+Route::delete('/user/delete/{id}', function(int $id) {
+  //...
 });
 ```
 
