@@ -5,7 +5,7 @@ In order to define a basic route, here are the HTTP verb you can use with `route
 * GET
 * POST
 * PUT
-* DELETE
+* DELETE.
 
 The listed methods above takes two to three arguments/parameters:
 
@@ -13,9 +13,17 @@ The listed methods above takes two to three arguments/parameters:
 * `handler`: this parameter takes either a closure, template name or controller action that should be executed when the route is accessed.
 * `middleware`: this is the code that runs before the main application loads.
 
+
+
 ### `GET` Method
 
 This route method is used for getting form data or http post requests, this method takes three arguments.
+
+* [ ] `uri` : _string._
+* [ ] `handler`:  **Closure**|_array_|_string._
+* [ ] `middleware`: _string_|_array_.
+
+#### :computer: Code Snippet:
 
 The code snippet below explains how `get` route method can be used with Closure handler:
 
@@ -36,7 +44,7 @@ Route::get('/', fn() => out('Hello World'));
 This route method is used for getting form data or http post requests, this method takes three arguments:
 
 * [ ] `uri` : _string._
-* [ ] `handler`:  **Closure** |object|_string._
+* [ ] `handler`:  **Closure**|_array_|_string._
 * [ ] `middleware`: _string_|_array_.
 
 #### :computer: Code Snippet:
@@ -59,7 +67,7 @@ This route method is used for making http put requests, this method takes three 
 #### :computer: Code Snippet:
 
 ```php
-Route::post('/edit-user', function() {
+Route::put('/edit-user', function() {
   //...
 });
 ```
@@ -69,7 +77,7 @@ Route::post('/edit-user', function() {
 This route method is used for making http delete requests, this method takes three arguments:
 
 * [ ] `uri` : _string._
-* [ ] `handler`:  **Closure**|_string._
+* [ ] `handler`:  **Closure**|_array_|_string._
 * [ ] `middleware`: _string_|_array_.
 
 #### :computer: Code Snippet:
@@ -80,7 +88,38 @@ Route::delete('/user/delete/{id}', function(int $id) {
 });
 ```
 
+### `MIXED` Method
 
+This route method is used for handling custom specified request methods, this method takes four arguments:
+
+* [ ] `methods`: _array_
+* [ ] `uri` : _string._
+* [ ] `handler`:  **Closure**|_array_|_string._
+* [ ] `middleware`: _string_|_array_.
+
+#### :computer: Code Snippet:
+
+```php
+Route::mixed(['GET', 'POST'], '/user/profile/edit', function() {
+  //...
+});
+```
+
+### `ANY` Method
+
+This route method is used to handle all request methods, this method takes three arguments:
+
+* [ ] `uri` : _string._
+* [ ] `handler`:  **Closure**|_array_|_string._
+* [ ] `middleware`: _string_|_array_.
+
+#### :computer: Code Snippet:
+
+```php
+Route::any('/static-page', function() {
+  //...
+});
+```
 
 ### Static Page Rendering
 
