@@ -12,7 +12,7 @@ The listed methods above takes two to three arguments:
 
 ### `Get` Method
 
-The code snippet below explains how `get` route method is been used with Closure handler:
+The code snippet below explains how `get` route method can be used with Closure handler:
 
 ```php
 Route::get('/', function () {
@@ -20,17 +20,25 @@ Route::get('/', function () {
 });
 ```
 
-Or you can shorten the process by using the short closure:
+Or you can shorten the process by using the short closure handler:
 
 ```php
 Route::get('/', fn () => out('Hello World'));
 ```
 
+### &#x20;`Post` Method
+
+This route method is used for getting form data or http post requests, this method takes three arguments:
+
+* [ ] `uri` :  u
+
+
+
 ### Static Page Rendering
 
 `Get` route method can also be used to display a static page or template located at the `views/` folder in the application main directory:
 
-> Note: FastVolt make use of Smarty as it's default templating system.
+> Note: Fastvolt make use of Smarty as it's default templating system.
 
 Assuming we created a new `index.tpl` template file in the `views/` folder, then the template can be directly displayed using the `route` method:
 
@@ -39,3 +47,4 @@ Route::get('/', 'index');
 ```
 
 > the above code snippet automatically display or map the created template: `index.tpl` on '/' request uri
+
