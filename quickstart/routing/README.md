@@ -17,7 +17,8 @@ Before diving into routing, ensure that FastVolt Framework is properly installed
 <br>
 
 ## Basic Routing
-To define a basic route, here are the HTTP verb you can use (e.g., GET, POST, PUT, DELETE) method. 
+To define a basic route, here are the HTTP verb you can use with `route` class (e.g., GET, POST, PUT, DELETE). 
+
 The listed methods above takes two to three arguments: 
 
 - `uri`: the URI to match with request uri.
@@ -39,5 +40,21 @@ Or you can shorten the process by using the short closure:
 ```php
 Route::get('/', fn () => out('Hello World'));
 ```
+
+### Static Page Rendering
+
+
+`Get` route method can also be used to display a static page or template located at the `views/` folder in the application main directory:
+
+>  Note: FastVolt make use of Smarty as it's default templating system.
+
+
+ Assuming we created a new `index.tpl` template file in the `views/` folder, then the template can be directly displayed using the `route` method:
+
+ ```php
+Route::get('/', 'index');
+```
+ > the above code snippet automatically display or map the created template: `index.tpl` on '/' request uri
+
 
 
