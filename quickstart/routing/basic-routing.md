@@ -19,6 +19,10 @@ The listed methods above takes two to three arguments/parameters:
 
 This route method is used for getting form data or http post requests, this method takes three arguments.
 
+```php
+Route::get($uri, $handler, $middleware);
+```
+
 * [ ] `uri` : _string._
 * [ ] `handler`:  **Closure**|_array_|_string._
 * [ ] `middleware`: _string_|_array_.
@@ -39,9 +43,15 @@ Or you can shorten the process by using the short closure handler:
 Route::get('/', fn() => out('Hello World'));
 ```
 
+
+
 ### &#x20;`POST` Method
 
 This route method is used for getting form data or http post requests, this method takes three arguments:
+
+```php
+Route::post($uri, $handler, $middleware);
+```
 
 * [ ] `uri` : _string._
 * [ ] `handler`:  **Closure**|_array_|_string._
@@ -51,14 +61,19 @@ This route method is used for getting form data or http post requests, this meth
 
 ```php
 Route::post('/add-user', function() {
-  $name = request()->post('user.name');
-  return out($name);
+  // ...
 });
 ```
+
+
 
 ### &#x20;`PUT` Method
 
 This route method is used for making http put requests, this method takes three arguments:
+
+```php
+Route::put($uri, $handler, $middleware);
+```
 
 * [ ] `uri` : _string._
 * [ ] `handler`:  **Closure**|_string._
@@ -68,13 +83,19 @@ This route method is used for making http put requests, this method takes three 
 
 ```php
 Route::put('/edit-user', function() {
-  //...
+  // ...
 });
 ```
+
+
 
 ### `DELETE` Method
 
 This route method is used for making http delete requests, this method takes three arguments:
+
+```php
+Route::delete($uri, $handler, $middleware);
+```
 
 * [ ] `uri` : _string._
 * [ ] `handler`:  **Closure**|_array_|_string._
@@ -84,13 +105,17 @@ This route method is used for making http delete requests, this method takes thr
 
 ```php
 Route::delete('/user/delete/{id}', function(int $id) {
-  //...
+  // ...
 });
 ```
 
 ### `MIXED` Method
 
 This route method is used for handling custom specified request methods, this method takes four arguments:
+
+```php
+Route::mixed($methods, $uri, $handler, $middleware);
+```
 
 * [ ] `methods`: _array_
 * [ ] `uri` : _string._
@@ -105,9 +130,15 @@ Route::mixed(['GET', 'POST'], '/user/profile/edit', function() {
 });
 ```
 
+
+
 ### `ANY` Method
 
 This route method is used to handle all request methods, this method takes three arguments:
+
+```php
+Route::any($uri, $handler, $middleware);
+```
 
 * [ ] `uri` : _string._
 * [ ] `handler`:  **Closure**|_array_|_string._
@@ -121,6 +152,8 @@ Route::any('/static-page', function() {
 });
 ```
 
+
+
 ### Static Page Rendering
 
 `Get` route method can also be used to display a static page or template located at the `views/` folder in the application main directory:
@@ -133,7 +166,7 @@ Assuming we created a new `index.tpl` template file in the `views/` folder, then
 Route::get('/', 'index');
 ```
 
-> the above code snippet automatically display or map the created template: `index.tpl` on '/' request uri
+> the above code snippet automatically display or map the created template: `index.tpl` on '/' request uri.
 
 
 
@@ -168,7 +201,17 @@ you are viewing blog id: 13
 
 Route groups allow you to apply common attributes, such as middleware to a set of routes.
 
-&#x20;process is useful when you want to group your routes into sections:
+&#x20;Route grouping is useful when you want to group your routes into sections and the `route` method takes one parameter:
+
+```php
+Route::group($prefix);
+```
+
+`prefix`: _string_.
+
+
+
+:computer: **Logic Representation:**&#x20;
 
 ```php
 $route = Route::group('/user');
