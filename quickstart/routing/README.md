@@ -1,4 +1,4 @@
-# 🎌 Routing
+# 🏁 Routing
 
 ## Initialization
 
@@ -7,7 +7,7 @@ use FastVolt/Router/Route;
 ```
 
 {% hint style="info" %}
-Fastvolt routes are defined in **.route** files, which are located in the `routes/` directory.
+Fastvolt routes are defined in **.route** files, which are located in the <mark style="color:red;">**`routes/`**</mark> directory.
 {% endhint %}
 
 \
