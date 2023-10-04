@@ -94,3 +94,51 @@ Or you can apply middleware to route groups in this format:
 </code></pre>
 
 > The '**middleware1**', '**middleware2**' will automatically be applied to all sub-routes in the example above.&#x20;
+
+
+
+### Namespace Routes
+
+Namespace route is useful only when you have your controller files in another directory except from the main controller directory `App\Http\Controller`, then you can specify the exact directory namespace in this format:
+
+For example, if we created a new folder `app/Http/Controller/Auth` which has a namespace of `App\Http\Controller\Auth` , and also created a new `UserController.php` file which contains the following code:
+
+```php
+<?php
+
+namespace App\Http\Controller\Auth;
+
+use FastVolt\Core\Controller;
+
+class UserController extends Controller {
+
+  public function index(){
+    // ...
+  }
+  
+  public function login(){
+    // ...
+  }
+  
+  public function register(){
+    // ...
+  }
+
+}
+```
+
+We can implement request routing to access this controller and it's methods using the below code format:
+
+```php
+$route = Route::namespace('App\Http\Controller\Auth');
+
+   $route->get('/' 'UserController@index');
+   
+   $route->get('/login' 'UserController@login');
+   
+   $route->get('/register' 'UserController@login');
+
+```
+
+
+
