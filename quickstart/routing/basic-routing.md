@@ -29,18 +29,10 @@ Route::get($uri, $handler, $middleware);
 
 #### :computer: Code Snippet:
 
-The code snippet below explains how `get` route method can be used with Closure handler:
-
 ```php
-Route::get('/', function () {
-   return out('Hello world'); // return 'Hello world'
+Route::get('/homepage', function() {
+  // ...
 });
-```
-
-Or you can shorten the process by using the short closure handler:
-
-```php
-Route::get('/', fn() => out('Hello World'));
 ```
 
 
@@ -154,6 +146,23 @@ Route::any('/static-page', function() {
 
 
 
+### Controller Route Handler
+
+The code snippet below explains how `get` route method can be used with controller object as handler:
+
+<pre class="language-php"><code class="lang-php"><strong>use App\Http\Controller\UserController;
+</strong><strong>
+</strong><strong>Route::get('/', [UserController::class, 'index']);
+</strong></code></pre>
+
+Or you can shorten the process by denoting the controller as string:
+
+```php
+Route::get('/', 'UserController@index');
+```
+
+
+
 ### Static Page Rendering
 
 `Get` route method can also be used to display a static page or template located at the `views/` folder in the application main directory:
@@ -258,3 +267,4 @@ Or you can apply middleware to route groups in this format:
 </code></pre>
 
 > The '**middleware1**', '**middleware2**' will automatically be applied to all sub-routes in the example above.&#x20;
+
