@@ -4,15 +4,15 @@
 
 * [👋 Introduction](README.md)
 * [🐦 Dependencies](overview/dependencies.md)
-* [📩 Installation](overview/installation.md)
+* [📥 Installation](overview/installation.md)
 * [📂 Directory Structure](overview/directory-structure.md)
 * [🛠 Configurations](overview/configurations.md)
 
 ## Quickstart
 
-* [🎌 Routing](quickstart/routing/README.md)
-  * [🌠 Basic Routing](quickstart/routing/basic-routing.md)
-  * [🌠 Advanced Routing](quickstart/routing/advanced-routing.md)
+* [🏁 Routing](quickstart/routing/README.md)
+  * [🏁 Basic Routing](quickstart/routing/basic-routing.md)
+  * [🏁 Advanced Routing](quickstart/routing/advanced-routing.md)
 * [⤴ Request](request.md)
 * [⤵ Response](quickstart/response.md)
 * [⭐ Session](quickstart/session/README.md)
