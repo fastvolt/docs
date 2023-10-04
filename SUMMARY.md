@@ -29,5 +29,6 @@
 
 ## 📙 Tutorials
 
-* [Create A Simple Todo App](todoapp.md)
-* [Create A Simple Blog](tutorials/create-a-simple-blog.md)
+* [📤 Uploading Files](tutorials/uploading-files.md)
+* [👩💻 Create A Simple Todo App](todoapp.md)
+* [📰 Create A Simple Blog](tutorials/create-a-simple-blog.md)
