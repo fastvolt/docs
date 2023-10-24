@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 🐦 Dependencies
 
 FastVolt framework make use of some packages/libraries or dependencies that extends it's core features, here are the list of dependencies that will be added when you are installing FastVolt Framework:
