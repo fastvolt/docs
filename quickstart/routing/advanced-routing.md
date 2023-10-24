@@ -1,5 +1,11 @@
 # 🏁 Advanced Routing
 
+In order to initialize router package, visit:
+
+{% content-ref url="./" %}
+[.](./)
+{% endcontent-ref %}
+
 ### Route Parameters
 
 In Fastvolt, you can define route parameters by enclosing them in curly braces `{id}` or using colon `:id`, These parameters capture values from the URL and pass them to your route handler as variables.
@@ -68,7 +74,11 @@ Middleware is a very simple and straight-forward way to filter HTTP requests ent
 Middleware can be assigned to single route in this format:
 
 ```php
-Route::get('/user', fn() => print("Hello World"), ['middleware1']);
+Route::get('/user', function() {
+
+   // ...
+ 
+}, ['middleware1']);
 ```
 
 Or:
@@ -130,13 +140,16 @@ class UserController extends Controller {
 We can implement request routing to access this controller and it's methods using the below code format:
 
 ```php
-$route = Route::namespace('App\Http\Controller\Auth');
+$auth = Route::namespace('App\Http\Controller\Auth');
 
-   $route->get('/' 'UserController@index');
+   // returns 'index' method
+   $auth->get('/' 'UserController@index');
    
-   $route->get('/login' 'UserController@login');
+   // returns 'login' method
+   $auth->get('/login' 'UserController@login');
    
-   $route->get('/register' 'UserController@login');
+   // returns 'register' method
+   $auth->get('/register' 'UserController@register');
 
 ```
 

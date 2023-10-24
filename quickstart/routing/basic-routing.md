@@ -1,6 +1,12 @@
 # 🏁 Basic Routing
 
-In order to define a basic route, here are the HTTP verb you can use with `route` class:
+In order to initialize router package, visit:
+
+{% content-ref url="./" %}
+[.](./)
+{% endcontent-ref %}
+
+To define a basic route, here are the HTTP verb you can use with `route` class:
 
 * GET
 * POST

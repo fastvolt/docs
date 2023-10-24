@@ -9,7 +9,7 @@ Here is how FastVolt directory structure looks like after installation:
 ├── routes                  # request routing files
     ├── api.route.php       # Api routes
 │   ├── main.route.php      # Main application routes
-│   ├── dev.route.php              # Devtools routes
+│   ├── dev.route.php       # Devtools routes
 ├── src                     # Application core source code
 ├── storage                 # Server storage
 │   ├── cache               # Cache files
