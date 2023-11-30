@@ -1,5 +1,20 @@
 ---
+cover: .gitbook/assets/fastvolt.png
 coverY: 0
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: false
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # 👋 Introduction

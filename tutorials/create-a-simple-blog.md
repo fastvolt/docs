@@ -1,2 +1,2 @@
-# Page 1
+# 📰 Create A Simple Blog
 
