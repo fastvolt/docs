@@ -4,16 +4,33 @@ Request form validation is the process in which data sent by end-users to the ap
 
 Validation is done by passing different rules into the request `validate()` method.:
 
+{% tabs %}
+{% tab title="Fastvolt" %}
 ```php
 $validate = request()->validate([
     'username' => 'required|max:20', // form_field_name => 'rules'
     'password' => 'required'
 ]);
 ```
+{% endtab %}
+
+{% tab title="Core PHP" %}
+<pre class="language-php"><code class="lang-php">if (! isset($_POST['username']) || strlen($_POST['username']) > 20 ) {
+   return 'invalid username';
+}
+
+<strong>if (! isset($_POST['password']) ) {
+</strong>   return 'invalid password';
+}
+
+//...
+</code></pre>
+{% endtab %}
+{% endtabs %}
 
 
 
-### Usage Sample:
+### Usage Sample
 
 Request validation works hand-in-hand with application controller, here is a usage example of this wonderful feature:
 
@@ -57,7 +74,7 @@ class CompanyController extends Controller
 
 
 
-### Available Validation Filters:
+### Available Validation Filters
 
 * `required` - this filter makes sure the submitted form value isn't empty.
 * `min:{value}` - this filter makes sure the submitted form value has the specified minimum value length.
@@ -78,7 +95,9 @@ Here is an example to add basic custom error message to request `validate` metho
 ```php
 $validate = request()->validate([
    'username' => 'required|max:20'
-], [
+],
+// custom validation messages 
+[
    'username' => 'Username field is invalid!'
 ]);
 
@@ -92,7 +111,9 @@ There is also another method to breakdown the error messages into segment (based
 ```php
 $validate = request()->validate([
    'username' => 'required|max:20'
-], [
+], 
+// custom validation messages
+[
    'username.required' => 'Username field is invalid!',
    'username.max' => 'Username value must be lesser than 40 characters'
 ]);
