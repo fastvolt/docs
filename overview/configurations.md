@@ -4,6 +4,8 @@ Fastvolt configuration page is pretty straight forward, the `.env` file in your 
 
 Here is is how the `.env` file looks like:
 
+{% tabs %}
+{% tab title=".env" %}
 ```systemd
 APP_NAME=FastVolt
 APP_URL=http://127.0.0.1/
@@ -26,8 +28,9 @@ MAIL_USERNAME=
 MAIL_PASSWORD=
 MAIL_PORT=3306
 MAIL_AUTH=true
-
 ```
+{% endtab %}
+{% endtabs %}
 
 ### App Essentials
 

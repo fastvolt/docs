@@ -93,13 +93,13 @@ Route::post('/auth', function () {
      $form = request()->input();
 
      # validate form post request datas
-     request()->validate(
+     $validate = request()->validate(
       'username' => 'required|min:2'
      );
 
        # return error message if validation process encountered any errors
-      if( request()->validate_errors() ){
-          return request ()->validate_errors();
+      if( $validate->has_errors() ){
+          return $validate->errors();
        }
 
       # check if username is stored in session successfully
