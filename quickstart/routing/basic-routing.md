@@ -6,18 +6,20 @@ In order to initialize router package, visit:
 [.](./)
 {% endcontent-ref %}
 
-To define a basic route, here are the HTTP verb you can use with `route` class:
+
+To define a basic route, here are the HTTP verbs/methods you can use in the `Router` package:
 
 * GET
 * POST
 * PUT
 * DELETE.
 
-The listed methods above takes two to three arguments/parameters:
+The above listed methods takes two to four arguments/parameters:
 
 * `uri`: the URI to match with request uri.
 * `handler`: this parameter takes either a closure, template name or controller action that should be executed when the route is accessed.
 * `middleware`: this is the code that runs before the main application loads.
+* `name`: this is an alias name for the defined route, it it used with `route` function to get a specific route info. 
 
 
 
@@ -26,19 +28,20 @@ The listed methods above takes two to three arguments/parameters:
 This route method is used for getting http get requests, this method takes three arguments.
 
 ```php
-Route::get($uri, $handler, $middleware);
+Route::get($uri, $handler, $middleware, $name);
 ```
 
 * [ ] `uri` : _string._
 * [ ] `handler`:  **Closure**|_array_|_string._
-* [ ] `middleware`: _string_|_array_.
+* [ ] `middleware`: _string_|_array_|_null_.
+* [ ] `name`: _string_|_null_.
 
 #### :computer: Code Snippet:
 
 ```php
 Route::get('/homepage', function() {
   // ...
-});
+}, name: 'home');
 ```
 
 
@@ -48,19 +51,20 @@ Route::get('/homepage', function() {
 This route method is used for getting form data or http post requests, this method takes three arguments:
 
 ```php
-Route::post($uri, $handler, $middleware);
+Route::post($uri, $handler, $middleware, $name);
 ```
 
 * [ ] `uri` : _string._
 * [ ] `handler`:  **Closure**|_array_|_string._
-* [ ] `middleware`: _string_|_array_.
+* [ ] `middleware`: _string_|_array_|_null_.
+* [ ] `name`: _string_|_null_.
 
 #### :computer: Code Snippet:
 
 ```php
 Route::post('/add-user', function() {
   // ...
-});
+}, name: 'add_new_user');
 ```
 
 
@@ -74,15 +78,16 @@ Route::put($uri, $handler, $middleware);
 ```
 
 * [ ] `uri` : _string._
-* [ ] `handler`:  **Closure**|_string._
-* [ ] `middleware`: _string_|_array_.
+* [ ] `handler`:  **Closure**|_array_|_string._
+* [ ] `middleware`: _string_|_array_|_null_.
+* [ ] `name`: _string_|_null_.
 
 #### :computer: Code Snippet:
 
 ```php
 Route::put('/edit-user', function() {
   // ...
-});
+}, name: 'edit_user');
 ```
 
 
@@ -92,19 +97,20 @@ Route::put('/edit-user', function() {
 This route method is used for making http delete requests, this method takes three arguments:
 
 ```php
-Route::delete($uri, $handler, $middleware);
+Route::delete($uri, $handler, $middleware, $name);
 ```
 
 * [ ] `uri` : _string._
 * [ ] `handler`:  **Closure**|_array_|_string._
-* [ ] `middleware`: _string_|_array_.
+* [ ] `middleware`: _string_|_array_|_null_.
+* [ ] `name`: _string_|_null_.
 
 #### :computer: Code Snippet:
 
 ```php
 Route::delete('/user/delete', function() {
   // ...
-});
+}, name: 'delete_user');
 ```
 
 ### `MIXED` Method
@@ -112,20 +118,21 @@ Route::delete('/user/delete', function() {
 This route method is used for handling custom specified request methods, this method takes four arguments:
 
 ```php
-Route::mixed($methods, $uri, $handler, $middleware);
+Route::mixed($methods, $uri, $handler, $middleware, $name);
 ```
 
-* [ ] `methods`: _array_
+* [ ] `methods`: _array._
 * [ ] `uri` : _string._
 * [ ] `handler`:  **Closure**|_array_|_string._
-* [ ] `middleware`: _string_|_array_.
+* [ ] `middleware`: _string_|_array_|_null_.
+* [ ] `name`: _string_|_null_.
 
 #### :computer: Code Snippet:
 
 ```php
-Route::mixed(['GET', 'POST'], '/user/profile/edit', function() {
+Route::mixed(['GET', 'POST'], '/settings, function() {
   //...
-});
+}, name: 'settings');
 ```
 
 
@@ -135,26 +142,27 @@ Route::mixed(['GET', 'POST'], '/user/profile/edit', function() {
 This route method is used to handle all request methods, this method takes three arguments:
 
 ```php
-Route::any($uri, $handler, $middleware);
+Route::any($uri, $handler, $middleware, $name);
 ```
 
 * [ ] `uri` : _string._
 * [ ] `handler`:  **Closure**|_array_|_string._
-* [ ] `middleware`: _string_|_array_.
+* [ ] `middleware`: _string_|_array_|_null_.
+* [ ] `name`: _string_|_null_.
 
 #### :computer: Code Snippet:
 
 ```php
-Route::any('/static-page', function() {
+Route::any('/homepage', function() {
   //...
-});
+}, name: 'home);
 ```
 
 
 
 ### Controller Route Handler
 
-The code snippet below explains how `get` route method can be used with controller object as handler:
+The code snippet below explains how `get` route method can be used with an object as handler:
 
 <pre class="language-php"><code class="lang-php"><strong>use App\Http\Controller\UserController;
 </strong><strong>
@@ -167,23 +175,25 @@ Or you can shorten the process by denoting the controller as string:
 Route::get('/', 'UserController@index');
 ```
 
-> In the code above, **`index()`** method in **`UserController`** class is executed on `/` request uri.
+> In the above code snippet, **`index()`** method is fetched from **`UserController`** class and executed/mapped on `/` request uri.
 
 
 
 ### Static Page Rendering
 
-`Get` route method can also be used to display a static page or template located at the `views/` folder in the application main directory:
+`Get` route method can also be used to display a static page or template located at the `views/` folder in the application root directory:
 
-> Note: Fastvolt make use of Smarty as it's default templating system.
+> Note: You can use Smarty template, PHP file or HTML file as the route handler, it will be automatically fetched from views directory and rendered.
+> Also note that you can format the handler name as `index` instead of `index.html` and when using this method, fastvolt automatically fetch the first file it encounters, so if `index.html` comes before `index.tpl`, `index.html` will be rendered.
 
-Assuming we created a new `index.tpl` template file in the `views/` folder, then the template can be directly displayed using the `route` method:
-
+#### :computer: Code Snippet:
 ```php
-Route::get('/', 'index');
+// short version
+Route::get('/', 'index', name: 'home');
+
+// full version
+Route::get('/', 'index.tpl', name: 'home');
 ```
 
 > the above code snippet automatically display or map the created template: `index.tpl` on '/' request uri.
-
-
 
