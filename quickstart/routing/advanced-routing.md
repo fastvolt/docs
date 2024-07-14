@@ -8,11 +8,11 @@ In order to initialize router package, visit:
 
 ### Route Parameters
 
-In Fastvolt, you can define route parameters by enclosing them in curly braces `{id}` or using colon `:id`, These parameters capture values from the URL and pass them to your route handler as variables.
+In fastvolt, you can define route parameters by enclosing them in curly braces `{id}` or by using colon `:id`, these parameters capture values from the URL and pass them to your route handler as variables.
 
 #### URL Snippet
 
-consider this url for example:
+let's consider this url for an example:
 
 ```batch
 http:://www.myblog.net/blog/13
@@ -22,11 +22,12 @@ http:://www.myblog.net/blog/13
 
 ```php
 Route::get('/blog/{id}', function(int $id) {
-    return out("you are viewing blog id: {$id}");
+    return "you are viewing blog id: {$id}";
 });
 ```
 
-The above code snippet captures the {id} value from the url snippet, then converts the {id} value to variable, the output of the above code while accessing the url: `http:://www.myblog.net/blog/13` from the browser will be:
+The above code snippet captures the {id} value from the url snippet, then converts the `{id}` to variable. 
+The output of the above code while accessing the url: `http:://www.myblog.net/blog/13` from the browser will be:
 
 ```sh
 you are viewing blog id: 13
@@ -36,16 +37,19 @@ you are viewing blog id: 13
 
 ### Route Groups
 
-Route groups allow you to apply common attributes, such as middleware to a set of routes.
+Route groups allow you to apply common attributes, such as middleware or add sub-routes to a parent main route.
 
-Route grouping is useful when you want to group your routes into sections and the `route` group method takes two parameter:
+Route grouping is useful when you want to group a bunch of sub-routes under a particular parent route.
+
+The `route` group method takes only four parameters:
 
 ```php
-Route::group($prefix, $middleware);
+Route::group($prefix, $middleware, $namespace);
 ```
 
 * `prefix`: _string_.
 * `middleware`: _array_|_string_.
+* `namespace`: _string_.
 
 
 
