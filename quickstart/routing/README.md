@@ -13,14 +13,14 @@ use FastVolt/Router/Route;
 ```
 
 {% hint style="info" %}
-Fastvolt routes are defined in **.route** files, which are located in the <mark style="color:red;">**`routes/`**</mark> directory.
+Fastvolt routes are defined in **.route** files, which are located in the <mark style="color:magenta;">**`routes/`**</mark> directory.
 {% endhint %}
 
 \
 In this documentation, you'll learn how to define, configure, and leverage the routing system in Fastvolt Framework to handle incoming requests and build robust web applications.\
 
 
-Before diving into routing, ensure that Fastvolt Framework is properly installed and configured in your project, refer to the installation documentation for detailed instructions.\
+Make sure to read the below pages to get a good grasp of how fastvolt framework can be installed and configured to avoid unnecessary errors.\
 
 
 {% content-ref url="../../overview/configurations.md" %}
@@ -31,7 +31,7 @@ Before diving into routing, ensure that Fastvolt Framework is properly installed
 [installation.md](../../overview/installation.md)
 {% endcontent-ref %}
 
-After properly configuring your application, then you can proceed to:
+After configuring your application, then, you can proceed to:
 
 {% content-ref url="basic-routing.md" %}
 [basic-routing.md](basic-routing.md)
